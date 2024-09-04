@@ -25,7 +25,7 @@ c.right = f
 #  / \   \
 # d   e   f
 
-
+# Iterative approach
 def depthFirstValues(root):
   
   if root == None: 
@@ -45,7 +45,24 @@ def depthFirstValues(root):
 
   return result
 # test 1 (populated tree)
-print(depthFirstValues(a))
+# print(depthFirstValues(a))
 
 # test 2 (empty tree)
-print(depthFirstValues(None))
+# print(depthFirstValues(None))
+
+def depthFirstValuesRecursive(root):
+  if root == None:
+    return []
+  # root == None and [] #ternary version
+  leftValues = depthFirstValuesRecursive(root.left) # returns [b,d,e]
+  rightValues = depthFirstValuesRecursive(root.right) # returns [c,f]
+
+  return [root.data, *leftValues, *rightValues]
+
+# test 1 (populated tree)
+# print(depthFirstValuesRecursive(a))
+
+# test 2 (empty tree)
+# print(depthFirstValuesRecursive(None))
+
+
