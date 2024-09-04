@@ -53,16 +53,16 @@ def depthFirstValues(root):
 def depthFirstValuesRecursive(root):
   if root == None:
     return []
-  # root == None and [] #ternary version
+  
   leftValues = depthFirstValuesRecursive(root.left) # returns [b,d,e]
   rightValues = depthFirstValuesRecursive(root.right) # returns [c,f]
 
   return [root.data, *leftValues, *rightValues]
 
 # test 1 (populated tree)
-# print(depthFirstValuesRecursive(a))
+print(depthFirstValuesRecursive(a))
 
 # test 2 (empty tree)
-# print(depthFirstValuesRecursive(None))
+print(depthFirstValuesRecursive(None))
 
 
